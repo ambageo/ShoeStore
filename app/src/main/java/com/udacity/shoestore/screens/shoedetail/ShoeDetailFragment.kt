@@ -27,8 +27,6 @@ class ShoeDetailFragment : Fragment() {
     ): View? {
         val binding: FragmentShoeDetailBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_shoe_detail,container, false)
 
-        //viewModel = ViewModelProvider(this).get(ShoeViewModel::class.java)
-
         binding.setLifecycleOwner(this)
         binding.shoeViewModel = viewModel
 

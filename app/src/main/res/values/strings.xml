@@ -29,4 +29,8 @@
     <string name="cancel">Cancel</string>
     <string name="logout">Logout</string>
     <string name="fill_all_fields_message">One or more fields are empty. Please fill them and then Save</string>
+    <string name="placeholder_shoe_name">Boots</string>
+    <string name="placeholder_shoe_company">Harley Davidson</string>
+    <string name="placeholder_shoe_size">7.5</string>
+    <string name="placeholder_shoe_description">Leather boots, black</string>
 </resources>

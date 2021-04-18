@@ -4,4 +4,5 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
     <color name="colorTextViewBackground">#8000FF00</color>
+    <color name="colorShoeDetailCard">#efc59c</color>
 </resources>

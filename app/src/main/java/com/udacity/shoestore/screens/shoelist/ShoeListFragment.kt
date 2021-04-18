@@ -13,11 +13,12 @@ import androidx.navigation.findNavController
 import com.udacity.shoestore.R
 import com.udacity.shoestore.ShoeViewModel
 import com.udacity.shoestore.databinding.FragmentShoeListBinding
+import com.udacity.shoestore.databinding.ShoeDetailsCardBinding
+import com.udacity.shoestore.models.Shoe
 import timber.log.Timber
 
 class ShoeListFragment : Fragment() {
 
-    //private lateinit var viewModel: ShoeViewModel
     private val viewModel: ShoeViewModel by activityViewModels()
 
     override fun onCreateView(
@@ -25,8 +26,8 @@ class ShoeListFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val binding: FragmentShoeListBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_shoe_list, container, false)
+        binding.setLifecycleOwner(this)
 
-        //viewModel = ViewModelProvider(this).get(ShoeViewModel::class.java)
 
         viewModel.shoeList.observe(viewLifecycleOwner, Observer { shoeList ->
             if(shoeList.isNotEmpty()){
@@ -36,6 +37,10 @@ class ShoeListFragment : Fragment() {
             }
             for( shoe in shoeList){
                 Timber.i("Shoe: ${shoe.name} ${shoe.company} ${shoe.size} ${shoe.description}")
+                val shoeBinding: ShoeDetailsCardBinding = DataBindingUtil.inflate(inflater, R.layout.shoe_details_card, binding.shoeListLinearlayout, false)
+               // No need to add each attribute of the shoe, just setting the shoe to the data binding
+                shoeBinding.shoe = shoe
+                binding.shoeListLinearlayout.addView(shoeBinding.root)
             }
         })
         binding.fabAddShoe.setOnClickListener { view: View ->
@@ -43,4 +48,5 @@ class ShoeListFragment : Fragment() {
         }
         return binding.root
     }
+
 }
