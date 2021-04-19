@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="margin_top">16dp</dimen>
+    <dimen name="margin_top">8dp</dimen>
     <dimen name="margin_top_half">8dp</dimen>
-    <dimen name="margin_top_button">64dp</dimen>
+    <dimen name="margin_top_button">16dp</dimen>
     <dimen name="margin">16dp</dimen>
     <dimen name="margin_fab">32dp</dimen>
-    <dimen name="padding_textview">16dp</dimen>
+    <dimen name="padding_textview">8dp</dimen>
     <dimen name="margin_half">8dp</dimen>
 </resources>

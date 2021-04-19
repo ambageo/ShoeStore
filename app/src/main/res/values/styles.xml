@@ -31,9 +31,24 @@
         <item name="android:gravity">center</item>
     </style>
 
+    <style name="LandscapeTextView">
+        <item name="android:layout_marginTop">@dimen/margin_top</item>
+        <item name="android:textSize">18sp</item>
+        <item name="fontFamily">@font/roboto</item>
+        <item name="android:gravity">center</item>
+    </style>
+
     <style name="ShoeDetailTextView">
-        <item name="android:layout_marginTop">@dimen/margin_top_half</item>
+        <item name="android:layout_marginTop">@dimen/margin_top</item>
         <item name="android:textSize">24sp</item>
+        <item name="fontFamily">@font/roboto</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="LandscapeShoeDetailTextView">
+        <item name="android:layout_marginTop">@dimen/margin_top_half</item>
+        <item name="android:layout_marginEnd">@dimen/margin_half</item>
+        <item name="android:textSize">18sp</item>
         <item name="fontFamily">@font/roboto</item>
         <item name="android:gravity">center</item>
     </style>
