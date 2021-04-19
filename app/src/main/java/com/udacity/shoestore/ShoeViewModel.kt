@@ -57,14 +57,8 @@ fun onNewShoe(){
 
 
     if(!_name.value.isNullOrEmpty() && !_company.value.isNullOrEmpty() && !_size.value.isNullOrEmpty() && !_description.value.isNullOrEmpty()) {
-    Timber.i("Adding ${_name.value} ${_size.value} ${_company.value} ${_description.value}")
         val newShoe = Shoe(_name.value!!, _size.value!!.toDouble(), _company.value!!, _description.value!!)
         _shoeList.value?.add(newShoe)
-
-        Timber.i("shoe list size is: ${shoeList.value?.size}")
-        _shoeList.value?.forEach { shoe ->
-            Timber.i("Shoe: ${shoe.name}")
-        }
         _eventNavigateBackToShoeList.value = true
     } else {
         _eventShowToast.value = true
@@ -72,10 +66,14 @@ fun onNewShoe(){
 }
     fun onNavigateBackToShoeListComplete(){
         _eventNavigateBackToShoeList.value = false
+        clearEditTexts()
     }
 
     fun onShowedToastComplete(){
         _eventShowToast.value = false
+    }
+
+    fun clearEditTexts(){
         shoeName = ""
         shoeSize = ""
         shoeCompany = ""

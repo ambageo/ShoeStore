@@ -31,10 +31,11 @@ class ShoeDetailFragment : Fragment() {
         binding.shoeViewModel = viewModel
 
         viewModel.eventNavigateBackToShoeList.observe(viewLifecycleOwner, Observer { shouldNavigateBack ->
-            if(shouldNavigateBack){
+            if (shouldNavigateBack) {
                 findNavController().navigate(ShoeDetailFragmentDirections.actionShoeDetailFragmentToShoeListFragment())
                 viewModel.onNavigateBackToShoeListComplete()
             }
+        })
 
             viewModel.eventShowToast.observe(viewLifecycleOwner, Observer { shouldShowToast ->
                 if(shouldShowToast){
@@ -43,12 +44,12 @@ class ShoeDetailFragment : Fragment() {
                 }
             })
 
-        })
         binding.saveButton.setOnClickListener { view:View ->
                 view.findNavController().navigate(ShoeDetailFragmentDirections.actionShoeDetailFragmentToShoeListFragment())
         }
         binding.cancelButton.setOnClickListener { view:View ->
             view.findNavController().navigate(ShoeDetailFragmentDirections.actionShoeDetailFragmentToShoeListFragment())
+            viewModel.clearEditTexts()
         }
         setHasOptionsMenu(true)
 

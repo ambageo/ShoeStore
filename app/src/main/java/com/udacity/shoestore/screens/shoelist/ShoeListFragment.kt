@@ -28,15 +28,8 @@ class ShoeListFragment : Fragment() {
         val binding: FragmentShoeListBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_shoe_list, container, false)
         binding.setLifecycleOwner(this)
 
-
         viewModel.shoeList.observe(viewLifecycleOwner, Observer { shoeList ->
-            if(shoeList.isNotEmpty()){
-                Timber.i("list is not empty, has ${shoeList.size} shoes")
-            } else {
-                Timber.i("list is empty")
-            }
             for( shoe in shoeList){
-                Timber.i("Shoe: ${shoe.name} ${shoe.company} ${shoe.size} ${shoe.description}")
                 val shoeBinding: ShoeDetailsCardBinding = DataBindingUtil.inflate(inflater, R.layout.shoe_details_card, binding.shoeListLinearlayout, false)
                // No need to add each attribute of the shoe, just setting the shoe to the data binding
                 shoeBinding.shoe = shoe
