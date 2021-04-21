@@ -4,17 +4,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <FrameLayout
+    <!-- Here, the use of ConstraintLayout was needed in order to keep the fab button at the bottom,
+    regardless of scrolling to see the shoes (so always available for use by the user) -->
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".screens.shoelist.ShoeListFragment">
+        tools:context=".screens.shoelist.ShoeListFragment"
+        android:orientation="vertical">
 
         <ScrollView
             android:id="@+id/shoe_list_scrollview"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-            <!-- Here, a simple LinearLayout is just needed, where we programmatically add the new
-            view for each shoe -->
+            <!-- LinearLayout inside the ScrollView as per requests -->
             <LinearLayout
                 android:id="@+id/shoe_list_linearlayout"
                 android:layout_width="match_parent"
@@ -26,12 +28,13 @@
             android:id="@+id/fab_add_shoe"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom|end"
             android:layout_margin="@dimen/margin_fab"
             app:backgroundTint="@color/colorPrimary"
             android:src="@drawable/ic_add"
             app:fabSize="normal"
-            android:contentDescription="@string/add_shoe_to_list" />
-    </FrameLayout>
+            android:contentDescription="@string/add_shoe_to_list"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>
