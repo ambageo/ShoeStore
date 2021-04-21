@@ -44,6 +44,8 @@
             android:layout_gravity="center"
             android:layout_marginTop="@dimen/margin_top"
             android:text="@string/shoe_list_button"
+            android:background="@drawable/rounded_button"
+            android:padding="@dimen/padding_textview"
             app:layout_constraintTop_toBottomOf="@id/guideline_instructions"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
