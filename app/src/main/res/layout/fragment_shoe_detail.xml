@@ -11,7 +11,9 @@
             name="shoe"
             type="com.udacity.shoestore.models.Shoe" />
     </data>
-
+    <!-- I have used ConstraintLayout because there are multiple views and they need to be positioned
+         relatively one another. Also I wanted a custom relative positioning between the textViews and
+         their EditTexts, so ConstraintLayout fits the purpose -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

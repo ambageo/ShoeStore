@@ -13,6 +13,8 @@
             android:id="@+id/shoe_list_scrollview"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+            <!-- Here, a simple LinearLayout is just needed, where we programmatically add the new
+            view for each shoe -->
             <LinearLayout
                 android:id="@+id/shoe_list_linearlayout"
                 android:layout_width="match_parent"
