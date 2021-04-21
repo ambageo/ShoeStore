@@ -6,6 +6,7 @@ import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.FragmentManager
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
@@ -46,5 +47,15 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return NavigationUI.onNavDestinationSelected(item, findNavController(R.id.nav_host_fragment)) ||super.onOptionsItemSelected(item)
 
+    }
+
+    override fun onBackPressed() {
+        // Here we check which is the most recent fragment and close the app if it is the LoginFragment
+        // This is because LoginFragment is not popped out when returning from the Shoe List
+        val currentFragment = supportFragmentManager.fragments.last()?.childFragmentManager?.fragments?.get(0)
+        if(currentFragment!!::class.java.simpleName.equals("LoginFragment")){
+           finish()
+        }
+        super.onBackPressed()
     }
 }
