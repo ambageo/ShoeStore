@@ -18,7 +18,6 @@ import timber.log.Timber
 
 class ShoeDetailFragment : Fragment() {
 
-    //private val viewModel: ShoeViewModel by ActivityV
     private val viewModel: ShoeViewModel by activityViewModels()
 
     override fun onCreateView(
